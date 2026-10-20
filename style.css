@@ -1,0 +1,4705 @@
+/* ==========================================================
+   PROJECT: BIRTHDAY SURPRISE WEBSITE
+   FILE: style.css
+
+   DESIGN:
+   Soft classic | Sage green | Dusty rose | Champagne gold
+
+   COMPATIBILITY:
+   Modern Android browsers
+   Chrome
+   Firefox
+   Safari
+   Microsoft Edge
+
+   DEPENDENCIES:
+   No external CSS libraries required.
+========================================================== */
+
+
+/* ==========================================================
+   01. ROOT VARIABLES
+========================================================== */
+
+:root {
+
+    /* ------------------------------------------------------
+       MAIN COLOUR PALETTE
+    ------------------------------------------------------ */
+
+    --ivory: #f76dbd;
+
+    --cream: #f5efe5;
+
+    --cream-light: #fffdf8;
+
+    --sage: #a5b49a;
+
+    --sage-light: #dfe7d9;
+
+    --sage-deep: #2e8b9b;
+
+    --sage-dark: #221f06;
+
+    --dusty-rose: #d8a5a4;
+
+    --rose-light: #f5e7e4;
+
+    --rose-deep: #b97f82;
+
+    --champagne: #c7aa75;
+
+    --champagne-light: #eadbb7;
+
+    --white: #ffffff;
+
+    --ink: #41483f;
+
+    --ink-soft: #77776d;
+
+    --border: rgba(155, 141, 109, 0.25);
+
+
+    /* ------------------------------------------------------
+       SHADOWS
+    ------------------------------------------------------ */
+
+    --shadow-soft:
+        0 12px 35px rgba(77, 83, 62, 0.08);
+
+    --shadow-card:
+        0 18px 45px rgba(75, 79, 61, 0.10);
+
+    --shadow-button:
+        0 8px 22px rgba(83, 105, 80, 0.17);
+
+
+    /* ------------------------------------------------------
+       BORDER RADII
+    ------------------------------------------------------ */
+
+    --radius-small: 12px;
+
+    --radius-medium: 20px;
+
+    --radius-large: 30px;
+
+    --radius-pill: 999px;
+
+
+    /* ------------------------------------------------------
+       TRANSITION SETTINGS
+    ------------------------------------------------------ */
+
+    --transition-fast: 180ms ease;
+
+    --transition-normal: 320ms ease;
+
+    --transition-slow: 700ms ease;
+
+
+    /* ------------------------------------------------------
+       PAGE LAYOUT
+    ------------------------------------------------------ */
+
+    --header-height: 62px;
+
+    --content-top-space: 82px;
+
+    --content-bottom-space: 92px;
+
+    --page-width: 1040px;
+
+
+    /* ------------------------------------------------------
+       SYSTEM FONT FALLBACKS
+
+       No external font download is required.
+    ------------------------------------------------------ */
+
+    --font-body:
+        "Noto Sans Devanagari",
+        "Mangal",
+        "Kohinoor Devanagari",
+        system-ui,
+        sans-serif;
+
+    --font-heading:
+        "Noto Serif Devanagari",
+        "Noto Serif",
+        "Kohinoor Devanagari",
+        Georgia,
+        serif;
+
+}
+
+
+
+/* ==========================================================
+   02. GLOBAL RESET
+========================================================== */
+
+*,
+*::before,
+*::after {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+html {
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background: var(--ivory);
+
+    -webkit-text-size-adjust: 100%;
+
+    text-size-adjust: 100%;
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+    height: 100dvh;
+
+    overflow: hidden;
+
+    background: var(--ivory);
+
+    color: var(--ink);
+
+    font-family: var(--font-body);
+
+    font-size: 15px;
+
+    line-height: 1.65;
+
+    -webkit-font-smoothing: antialiased;
+
+    -moz-osx-font-smoothing: grayscale;
+
+    overscroll-behavior: none;
+
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+
+/* Keep media elements inside their containers. */
+
+img,
+video,
+audio {
+
+    max-width: 100%;
+
+}
+
+
+/* Images should not accidentally create layout overflow. */
+
+img {
+
+    display: block;
+
+}
+
+
+/* Buttons and links inherit the website font. */
+
+button,
+a {
+
+    font: inherit;
+
+}
+
+
+/* Remove the default button appearance. */
+
+button {
+
+    border: none;
+
+    background: none;
+
+    color: inherit;
+
+}
+
+
+/* Keyboard accessibility. */
+
+button:focus-visible,
+a:focus-visible {
+
+    outline: 3px solid var(--champagne);
+
+    outline-offset: 5px;
+
+}
+
+
+
+/* ==========================================================
+   03. MAIN WEBSITE WRAPPER
+========================================================== */
+
+.website-wrapper {
+
+    position: relative;
+
+    isolation: isolate;
+
+    width: 100%;
+
+    height: 100%;
+
+    height: 100dvh;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            ellipse at 14% 16%,
+            rgba(216, 165, 164, 0.16),
+            transparent 34%
+        ),
+
+        radial-gradient(
+            ellipse at 88% 80%,
+            rgba(165, 180, 154, 0.22),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            140deg,
+            var(--cream-light) 0%,
+            var(--ivory) 48%,
+            #f2eee5 100%
+        );
+
+}
+
+
+/*
+   A subtle texture made with CSS gradients.
+
+   It is intentionally faint so that the text stays readable.
+*/
+
+.website-wrapper::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+    opacity: 0.32;
+
+    background-image:
+
+        radial-gradient(
+            rgba(164, 143, 101, 0.16) 0.65px,
+            transparent 0.65px
+        );
+
+    background-size: 10px 10px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 20%,
+        black 80%,
+        transparent
+    );
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 20%,
+        black 80%,
+        transparent
+    );
+
+}
+
+
+
+/* ==========================================================
+   04. AMBIENT BACKGROUND DECORATIONS
+========================================================== */
+
+.background-decoration {
+
+    position: absolute;
+
+    z-index: 0;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(1px);
+
+    will-change: transform;
+
+}
+
+
+.background-decoration-one {
+
+    width: clamp(190px, 32vw, 420px);
+
+    aspect-ratio: 1;
+
+    top: -135px;
+
+    right: -100px;
+
+    background: radial-gradient(
+        circle,
+        rgba(216, 165, 164, 0.19) 0%,
+        rgba(216, 165, 164, 0.07) 46%,
+        transparent 72%
+    );
+
+    animation: ambientFloatOne 16s ease-in-out infinite alternate;
+
+}
+
+
+.background-decoration-two {
+
+    width: clamp(220px, 34vw, 470px);
+
+    aspect-ratio: 1;
+
+    left: -145px;
+
+    bottom: -165px;
+
+    background: radial-gradient(
+        circle,
+        rgba(165, 180, 154, 0.23) 0%,
+        rgba(165, 180, 154, 0.07) 48%,
+        transparent 73%
+    );
+
+    animation: ambientFloatTwo 19s ease-in-out infinite alternate;
+
+}
+
+
+.background-decoration-three {
+
+    width: clamp(100px, 16vw, 210px);
+
+    aspect-ratio: 1;
+
+    right: 9%;
+
+    top: 38%;
+
+    background: radial-gradient(
+        circle,
+        rgba(234, 219, 183, 0.2) 0%,
+        transparent 72%
+    );
+
+    animation: ambientFloatThree 13s ease-in-out infinite alternate;
+
+}
+
+
+
+/* ==========================================================
+   05. SOFT AMBIENT ANIMATIONS
+========================================================== */
+
+@keyframes ambientFloatOne {
+
+    from {
+
+        transform: translate3d(0, 0, 0);
+
+    }
+
+    to {
+
+        transform: translate3d(-24px, 22px, 0);
+
+    }
+
+}
+
+
+@keyframes ambientFloatTwo {
+
+    from {
+
+        transform: translate3d(0, 0, 0);
+
+    }
+
+    to {
+
+        transform: translate3d(20px, -24px, 0);
+
+    }
+
+}
+
+
+@keyframes ambientFloatThree {
+
+    from {
+
+        transform: translate3d(0, 0, 0) scale(1);
+
+    }
+
+    to {
+
+        transform: translate3d(-14px, 17px, 0) scale(1.12);
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   06. FLOATING PETALS
+========================================================== */
+
+.petal-layer {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+}
+
+
+/*
+   JavaScript may create span elements with the class "petal".
+
+   Each element can have its own left position, size,
+   opacity and animation duration.
+*/
+
+.petal {
+
+    position: absolute;
+
+    display: block;
+
+    width: 10px;
+
+    height: 15px;
+
+    border-radius: 100% 0 100% 0;
+
+    background: linear-gradient(
+        145deg,
+        rgba(235, 191, 185, 0.74),
+        rgba(198, 148, 147, 0.38)
+    );
+
+    box-shadow:
+        0 2px 7px rgba(155, 113, 103, 0.06);
+
+    pointer-events: none;
+
+    opacity: 0.65;
+
+    transform-origin: center;
+
+    animation:
+        petalDrift 14s linear infinite;
+
+    will-change: transform, opacity;
+
+}
+
+
+.petal:nth-child(3n) {
+
+    width: 8px;
+
+    height: 12px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(218, 226, 204, 0.85),
+        rgba(142, 161, 132, 0.43)
+    );
+
+    animation-duration: 17s;
+
+}
+
+
+.petal:nth-child(3n + 1) {
+
+    animation-duration: 19s;
+
+    animation-delay: -5s;
+
+}
+
+
+.petal:nth-child(3n + 2) {
+
+    animation-duration: 15s;
+
+    animation-delay: -8s;
+
+}
+
+
+@keyframes petalDrift {
+
+    0% {
+
+        transform: translate3d(0, -5vh, 0) rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    12% {
+
+        opacity: 0.55;
+
+    }
+
+    50% {
+
+        transform: translate3d(32px, 48vh, 0) rotate(160deg);
+
+    }
+
+    85% {
+
+        opacity: 0.42;
+
+    }
+
+    100% {
+
+        transform: translate3d(-20px, 110vh, 0) rotate(340deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   07. WEBSITE HEADER
+========================================================== */
+
+.site-header {
+
+    position: absolute;
+
+    top: max(14px, env(safe-area-inset-top));
+
+    left: clamp(16px, 3.2vw, 42px);
+
+    z-index: 30;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    max-width: calc(100% - 150px);
+
+    pointer-events: none;
+
+}
+
+
+.brand-mark {
+
+    position: relative;
+
+    flex: 0 0 auto;
+
+    display: grid;
+
+    place-items: center;
+
+    width: 43px;
+
+    height: 43px;
+
+    border: 1px solid rgba(199, 170, 117, 0.62);
+
+    border-radius: 50%;
+
+    background: rgba(255, 253, 248, 0.76);
+
+    box-shadow: var(--shadow-soft);
+
+}
+
+
+.brand-mark::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 4px;
+
+    border: 1px solid rgba(199, 170, 117, 0.36);
+
+    border-radius: 50%;
+
+}
+
+
+.brand-mark-symbol {
+
+    color: var(--rose-deep);
+
+    font-family: var(--font-heading);
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    animation: gentleBloom 6s ease-in-out infinite;
+
+}
+
+
+.brand-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+
+    min-width: 0;
+
+}
+
+
+.brand-title {
+
+    color: var(--sage-dark);
+
+    font-family: var(--font-heading);
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    letter-spacing: 0.1px;
+
+}
+
+
+.brand-subtitle {
+
+    color: var(--ink-soft);
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.3px;
+
+}
+
+
+@keyframes gentleBloom {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.09);
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   08. SLIDE SYSTEM
+
+   CRITICAL SECTION
+
+   The site is a seven-page slide deck.
+
+   The JavaScript must:
+   1. Find the slides with [data-slide].
+   2. Remove hidden from the active slide.
+   3. Add is-active to the active slide.
+   4. Set hidden on inactive slides.
+
+   Do not remove the [hidden] rule below.
+========================================================== */
+
+.slide-deck {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 3;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+}
+
+
+/*
+   The browser's native [hidden] rule must win.
+
+   Otherwise, the slide's display:flex may accidentally
+   make an inactive slide visible.
+*/
+
+[hidden] {
+
+    display: none !important;
+
+}
+
+
+.slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: translate3d(20px, 0, 0) scale(0.992);
+
+    transition:
+
+        opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+
+        visibility 700ms;
+
+    background: transparent;
+
+}
+
+
+/*
+   Only the active slide receives pointer events.
+*/
+
+.slide.is-active {
+
+    visibility: visible;
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: translate3d(0, 0, 0) scale(1);
+
+    z-index: 2;
+
+}
+
+
+/*
+   A soft decorative halo belongs to each page.
+
+   It sits behind the actual content.
+*/
+
+.slide::before {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    top: 50%;
+
+    left: 50%;
+
+    width: min(78vw, 740px);
+
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.58) 0%,
+        rgba(255, 253, 248, 0.25) 44%,
+        transparent 73%
+    );
+
+    pointer-events: none;
+
+}
+
+
+/*
+   Main content is vertically and horizontally centred.
+
+   Its top and bottom padding leave room for the fixed
+   branding, progress dots and music control.
+*/
+
+.slide-content {
+
+    position: relative;
+
+    z-index: 4;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: clamp(7px, 1.2vh, 13px);
+
+    width: min(100%, var(--page-width));
+
+    height: 100%;
+
+    min-height: 0;
+
+    margin-inline: auto;
+
+    padding:
+
+        calc(var(--content-top-space) + env(safe-area-inset-top))
+
+        clamp(17px, 4vw, 40px)
+
+        calc(var(--content-bottom-space) + env(safe-area-inset-bottom));
+
+    overflow: hidden;
+
+    text-align: center;
+
+}
+
+
+/*
+   Entrance animation for elements inside active slides.
+
+   Existing HTML remains unchanged.
+*/
+
+.slide.is-active .slide-content > * {
+
+    animation: contentFadeUp 650ms both;
+
+}
+
+
+.slide.is-active .slide-content > *:nth-child(1) {
+
+    animation-delay: 40ms;
+
+}
+
+
+.slide.is-active .slide-content > *:nth-child(2) {
+
+    animation-delay: 90ms;
+
+}
+
+
+.slide.is-active .slide-content > *:nth-child(3) {
+
+    animation-delay: 140ms;
+
+}
+
+
+.slide.is-active .slide-content > *:nth-child(4) {
+
+    animation-delay: 190ms;
+
+}
+
+
+.slide.is-active .slide-content > *:nth-child(5) {
+
+    animation-delay: 230ms;
+
+}
+
+
+.slide.is-active .slide-content > *:nth-child(6) {
+
+    animation-delay: 270ms;
+
+}
+
+
+.slide.is-active .slide-content > *:nth-child(7) {
+
+    animation-delay: 300ms;
+
+}
+
+
+.slide.is-active .slide-content > *:nth-child(n + 8) {
+
+    animation-delay: 330ms;
+
+}
+
+
+@keyframes contentFadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translate3d(0, 13px, 0);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translate3d(0, 0, 0);
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   09. TYPOGRAPHY
+========================================================== */
+
+.eyebrow {
+
+    flex: 0 0 auto;
+
+    color: var(--rose-deep);
+
+    font-family: var(--font-body);
+
+    font-size: clamp(10px, 1.4vw, 12px);
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    line-height: 1.7;
+
+    text-transform: uppercase;
+
+}
+
+
+.main-heading {
+
+    flex: 0 0 auto;
+
+    color: var(--sage-dark);
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(35px, 6.3vw, 63px);
+
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    letter-spacing: -0.6px;
+
+    text-shadow: 0 3px 18px rgba(89, 109, 86, 0.06);
+
+}
+
+
+.section-heading {
+
+    flex: 0 0 auto;
+
+    max-width: 100%;
+
+    color: var(--sage-dark);
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(27px, 4.3vw, 43px);
+
+    font-weight: 700;
+
+    line-height: 1.4;
+
+    letter-spacing: -0.25px;
+
+}
+
+
+.section-description {
+
+    flex: 0 0 auto;
+
+    max-width: 560px;
+
+    color: var(--ink-soft);
+
+    font-size: clamp(12px, 1.7vw, 15px);
+
+    line-height: 1.9;
+
+}
+
+
+.welcome-description {
+
+    flex: 0 0 auto;
+
+    color: var(--ink-soft);
+
+    font-size: clamp(13px, 2vw, 16px);
+
+    line-height: 2;
+
+}
+
+
+.welcome-caption {
+
+    flex: 0 0 auto;
+
+    color: var(--rose-deep);
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(12px, 1.8vw, 15px);
+
+    font-style: italic;
+
+}
+
+
+.photo-note,
+.video-caption {
+
+    flex: 0 0 auto;
+
+    color: var(--ink-soft);
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+}
+
+
+.final-description {
+
+    max-width: 540px;
+
+    color: var(--ink-soft);
+
+    font-size: clamp(13px, 2vw, 16px);
+
+    line-height: 2.05;
+
+}
+
+
+.final-small-text {
+
+    color: var(--ink-soft);
+
+    font-size: 11px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* ==========================================================
+   10. WELCOME PAGE
+========================================================== */
+
+.welcome-content {
+
+    padding-top: calc(74px + env(safe-area-inset-top));
+
+    gap: clamp(8px, 1.4vh, 14px);
+
+}
+
+
+/*
+   The three stars float gently around the heading.
+*/
+
+.welcome-decoration {
+
+    position: absolute;
+
+    inset: 13% 8% auto;
+
+    height: 110px;
+
+    pointer-events: none;
+
+}
+
+
+.decorative-star {
+
+    position: absolute;
+
+    color: var(--champagne);
+
+    font-family: Georgia, serif;
+
+    animation: starTwinkle 4s ease-in-out infinite;
+
+}
+
+
+.star-one {
+
+    left: 15%;
+
+    top: 25%;
+
+    font-size: 28px;
+
+}
+
+
+.star-two {
+
+    right: 17%;
+
+    top: 12%;
+
+    font-size: 20px;
+
+    animation-delay: 1.1s;
+
+}
+
+
+.star-three {
+
+    right: 24%;
+
+    bottom: 0;
+
+    font-size: 17px;
+
+    animation-delay: 2.1s;
+
+}
+
+
+@keyframes starTwinkle {
+
+    0%,
+    100% {
+
+        opacity: 0.45;
+
+        transform: scale(0.92) rotate(0deg);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.14) rotate(12deg);
+
+    }
+
+}
+
+
+/* Soft decorative floral emblem. */
+
+.welcome-illustration {
+
+    position: relative;
+
+    display: grid;
+
+    flex: 0 0 auto;
+
+    place-items: center;
+
+    width: clamp(84px, 15vh, 118px);
+
+    aspect-ratio: 1;
+
+    margin-block: 1px 3px;
+
+}
+
+
+.illustration-ring {
+
+    position: absolute;
+
+    inset: 0;
+
+    border: 1px solid rgba(199, 170, 117, 0.54);
+
+    border-radius: 50%;
+
+}
+
+
+.ring-one {
+
+    animation: ringRotate 34s linear infinite;
+
+}
+
+
+.ring-two {
+
+    inset: 10px;
+
+    border-style: dashed;
+
+    border-color: rgba(185, 127, 130, 0.40);
+
+    animation: ringRotate 46s linear infinite reverse;
+
+}
+
+
+.ring-one::before,
+.ring-one::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    color: var(--champagne);
+
+    font-size: 11px;
+
+    line-height: 1;
+
+}
+
+
+.ring-one::before {
+
+    top: -5px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+.ring-one::after {
+
+    bottom: -5px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+.illustration-center {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 60%;
+
+    height: 60%;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        145deg,
+        #fffdf8,
+        #f4e8d8
+    );
+
+    box-shadow:
+        inset 0 0 0 1px rgba(199, 170, 117, 0.3),
+        0 8px 20px rgba(100, 96, 74, 0.08);
+
+}
+
+
+.illustration-center span {
+
+    color: var(--rose-deep);
+
+    font-size: clamp(28px, 5vh, 40px);
+
+    line-height: 1;
+
+    animation: gentleBloom 6s ease-in-out infinite;
+
+}
+
+
+@keyframes ringRotate {
+
+    to {
+
+        transform: rotate(360deg);
+
+    }
+
+}
+
+
+/* Small floral divider. */
+
+.welcome-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    width: min(200px, 70%);
+
+    margin-block: 1px;
+
+}
+
+
+.welcome-divider > span:not(.divider-flower) {
+
+    flex: 1;
+
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--champagne)
+    );
+
+}
+
+
+.welcome-divider > span:last-child {
+
+    transform: rotate(180deg);
+
+}
+
+
+.divider-flower {
+
+    color: var(--rose-deep);
+
+    font-size: 15px;
+
+}
+
+
+
+/* ==========================================================
+   11. BUTTON SYSTEM
+========================================================== */
+
+.primary-button,
+.secondary-button,
+.download-button {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    flex: 0 0 auto;
+
+    min-height: 44px;
+
+    padding: 11px 22px;
+
+    border-radius: var(--radius-pill);
+
+    font-family: var(--font-body);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    -webkit-user-select: none;
+
+    transition:
+
+        transform var(--transition-normal),
+
+        background-color var(--transition-normal),
+
+        color var(--transition-normal),
+
+        box-shadow var(--transition-normal),
+
+        border-color var(--transition-normal);
+
+}
+
+
+/* Main sage-green button. */
+
+.primary-button {
+
+    color: var(--white);
+
+    background: linear-gradient(
+        135deg,
+        #778c72 0%,
+        #586f55 100%
+    );
+
+    border: 1px solid rgba(66, 89, 65, 0.25);
+
+    box-shadow: var(--shadow-button);
+
+}
+
+
+.primary-button:hover {
+
+    background: linear-gradient(
+        135deg,
+        #879b80 0%,
+        #657c61 100%
+    );
+
+    box-shadow:
+        0 12px 26px rgba(83, 105, 80, 0.22);
+
+    transform: translateY(-2px);
+
+}
+
+
+.primary-button:active {
+
+    transform: translateY(1px) scale(0.985);
+
+    box-shadow:
+        0 4px 12px rgba(83, 105, 80, 0.14);
+
+}
+
+
+/* Subtle outline button. */
+
+.secondary-button {
+
+    color: var(--sage-deep);
+
+    background: rgba(255, 253, 248, 0.72);
+
+    border: 1px solid rgba(142, 161, 132, 0.42);
+
+    box-shadow: 0 4px 14px rgba(65, 77, 57, 0.04);
+
+}
+
+
+.secondary-button:hover {
+
+    color: var(--sage-dark);
+
+    background: var(--sage-light);
+
+    border-color: var(--sage);
+
+    transform: translateY(-1px);
+
+}
+
+
+.secondary-button:active {
+
+    transform: scale(0.985);
+
+}
+
+
+/* Text-only button. */
+
+.text-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex: 0 0 auto;
+
+    min-height: 32px;
+
+    padding: 4px 10px;
+
+    color: var(--rose-deep);
+
+    font-size: 12px;
+
+    border-radius: var(--radius-pill);
+
+    cursor: pointer;
+
+    transition:
+
+        color var(--transition-normal),
+
+        background-color var(--transition-normal);
+
+}
+
+
+.text-button:hover {
+
+    color: var(--sage-dark);
+
+    background: rgba(255, 255, 255, 0.45);
+
+}
+
+
+.button-arrow {
+
+    display: inline-block;
+
+    margin-left: 3px;
+
+    font-size: 17px;
+
+    transition: transform var(--transition-normal);
+
+}
+
+
+.primary-button:hover .button-arrow {
+
+    transform: translateX(3px);
+
+}
+
+
+/* ==========================================================
+   12. SURPRISE BUTTON DETAILS
+========================================================== */
+
+#openSurprise {
+
+    min-width: 166px;
+
+    margin-top: 1px;
+
+}
+
+
+#openSurprise .button-label {
+
+    letter-spacing: 0.2px;
+
+}
+
+
+/* Spoken greeting status. */
+
+.status-message {
+
+    flex: 0 0 auto;
+
+    min-height: 16px;
+
+    color: var(--sage-deep);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+}
+
+
+
+/* ==========================================================
+   13. SLIDE NAVIGATION BUTTONS
+========================================================== */
+
+.slide-navigation {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-wrap: nowrap;
+
+    gap: clamp(10px, 3vw, 18px);
+
+    width: 100%;
+
+    margin-top: clamp(4px, 1vh, 11px);
+
+    flex: 0 0 auto;
+
+}
+
+
+.slide-navigation .primary-button,
+.slide-navigation .secondary-button {
+
+    min-height: 42px;
+
+    padding: 9px clamp(13px, 2.3vw, 20px);
+
+    font-size: 12px;
+
+}
+
+
+/* Prevent long text from distorting the navigation. */
+
+.slide-navigation button {
+
+    white-space: nowrap;
+
+}
+
+
+
+/* ==========================================================
+   14. PAGE 2: RELIGIOUS BLESSINGS
+========================================================== */
+
+.blessing-content {
+
+    gap: clamp(7px, 1.15vh, 12px);
+
+}
+
+
+.section-symbol {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 44px;
+
+    height: 44px;
+
+    color: var(--rose-deep);
+
+    font-family: var(--font-heading);
+
+    font-size: 30px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.68);
+
+    border: 1px solid rgba(199, 170, 117, 0.34);
+
+    box-shadow: var(--shadow-soft);
+
+}
+
+
+.blessing-image-frame {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    flex: 0 1 auto;
+
+    width: clamp(150px, 24vh, 205px);
+
+    max-width: 68vw;
+
+    padding: 8px;
+
+    border: 1px solid rgba(199, 170, 117, 0.52);
+
+    border-radius: 18px;
+
+    background: rgba(255, 253, 248, 0.88);
+
+    box-shadow: var(--shadow-card);
+
+}
+
+
+.blessing-image {
+
+    width: 100%;
+
+    height: clamp(95px, 18vh, 155px);
+
+    border-radius: 11px;
+
+    object-fit: cover;
+
+    background: linear-gradient(
+        145deg,
+        var(--rose-light),
+        var(--sage-light)
+    );
+
+}
+
+
+.image-caption {
+
+    padding-top: 5px;
+
+    color: var(--sage-deep);
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+}
+
+
+.blessing-quote {
+
+    max-width: 470px;
+
+    color: var(--rose-deep);
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(12px, 1.7vw, 14px);
+
+    font-style: italic;
+
+    line-height: 1.85;
+
+}
+
+
+
+/* ==========================================================
+   15. PAGE 3: PHOTO GALLERY
+========================================================== */
+
+.photos-content {
+
+    gap: clamp(7px, 1.2vh, 12px);
+
+}
+
+
+.photo-gallery {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    align-items: start;
+
+    gap: clamp(7px, 2vw, 20px);
+
+    width: min(100%, 620px);
+
+    margin-block: 2px;
+
+}
+
+
+.memory-card {
+
+    position: relative;
+
+    min-width: 0;
+
+    padding: clamp(5px, 1.2vw, 9px);
+
+    border: 1px solid rgba(199, 170, 117, 0.43);
+
+    border-radius: 8px;
+
+    background: rgba(255, 253, 248, 0.96);
+
+    box-shadow:
+        0 7px 19px rgba(65, 70, 54, 0.10);
+
+    transition:
+
+        transform 350ms ease,
+
+        box-shadow 350ms ease;
+
+}
+
+
+.memory-card-one {
+
+    transform: rotate(-3deg);
+
+}
+
+
+.memory-card-two {
+
+    margin-top: 10px;
+
+    transform: rotate(2deg);
+
+}
+
+
+.memory-card-three {
+
+    transform: rotate(-1deg);
+
+}
+
+
+.memory-card:hover {
+
+    z-index: 3;
+
+    transform: translateY(-5px) rotate(0deg);
+
+    box-shadow:
+        0 14px 28px rgba(65, 70, 54, 0.14);
+
+}
+
+
+.memory-image-wrap {
+
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    background: linear-gradient(
+        140deg,
+        #f2e5df,
+        #e5e9da
+    );
+
+}
+
+
+/*
+   Both existing photograph elements have safe dimensions.
+
+   Add the correctly named image files to assets/images/.
+*/
+
+.memory-image-wrap img {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: linear-gradient(
+        145deg,
+        var(--rose-light),
+        var(--sage-light)
+    );
+
+    transition: transform 600ms ease;
+
+}
+
+
+.memory-card:hover .memory-image-wrap img {
+
+    transform: scale(1.045);
+
+}
+
+
+.memory-card figcaption {
+
+    overflow: hidden;
+
+    padding: 7px 2px 3px;
+
+    color: var(--sage-deep);
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(9px, 1.2vw, 12px);
+
+    line-height: 1.5;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+}
+
+
+
+/* ==========================================================
+   16. PAGE 4: BIRTHDAY SONG
+========================================================== */
+
+.song-content {
+
+    gap: clamp(8px, 1.4vh, 14px);
+
+}
+
+
+/* Musical illustration. */
+
+.music-illustration {
+
+    position: relative;
+
+    display: grid;
+
+    flex: 0 0 auto;
+
+    place-items: center;
+
+    width: clamp(100px, 18vh, 145px);
+
+    aspect-ratio: 1;
+
+    margin-block: 1px;
+
+}
+
+
+.music-circle {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+}
+
+
+.music-circle-one {
+
+    border: 1px solid rgba(199, 170, 117, 0.64);
+
+    animation: ringRotate 35s linear infinite;
+
+}
+
+
+.music-circle-two {
+
+    inset: 12px;
+
+    border: 1px dashed rgba(185, 127, 130, 0.48);
+
+    animation: ringRotate 48s linear infinite reverse;
+
+}
+
+
+.music-center {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 58%;
+
+    height: 58%;
+
+    border: 1px solid rgba(199, 170, 117, 0.36);
+
+    border-radius: 50%;
+
+    color: var(--rose-deep);
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(31px, 6vh, 45px);
+
+    background: linear-gradient(
+        145deg,
+        #f3f4f7,
+        #f0e5da
+    );
+
+    box-shadow: var(--shadow-soft);
+
+    animation: heartBeatSoft 4s ease-in-out infinite;
+
+}
+
+
+.music-note {
+
+    position: absolute;
+
+    color: var(--sage-deep);
+
+    font-family: Georgia, serif;
+
+    line-height: 1;
+
+}
+
+
+.note-one {
+
+    top: 1%;
+
+    right: 2%;
+
+    font-size: 27px;
+
+    animation: noteFloat 4.5s ease-in-out infinite;
+
+}
+
+
+.note-two {
+
+    bottom: 3%;
+
+    left: 1%;
+
+    font-size: 23px;
+
+    animation: noteFloat 5s ease-in-out infinite reverse;
+
+}
+
+
+@keyframes heartBeatSoft {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.045);
+
+    }
+
+}
+
+
+@keyframes noteFloat {
+
+    0%,
+    100% {
+
+        transform: translateY(0) rotate(-4deg);
+
+    }
+
+    50% {
+
+        transform: translateY(-6px) rotate(5deg);
+
+    }
+
+}
+
+
+/* Audio player card. */
+
+.audio-player-card {
+
+    width: min(100%, 410px);
+
+    padding: clamp(14px, 2.2vh, 21px);
+
+    border: 1px solid rgba(199, 170, 117, 0.33);
+
+    border-radius: var(--radius-medium);
+
+    background: rgba(255, 253, 248, 0.84);
+
+    box-shadow: var(--shadow-card);
+
+    text-align: left;
+
+}
+
+
+.audio-card-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.audio-card-icon {
+
+    display: grid;
+
+    place-items: center;
+
+    flex: 0 0 auto;
+
+    width: 43px;
+
+    height: 43px;
+
+    border-radius: 50%;
+
+    color: var(--rose-deep);
+
+    background: var(--rose-light);
+
+    font-family: Georgia, serif;
+
+    font-size: 24px;
+
+}
+
+
+.audio-title {
+
+    color: var(--sage-dark);
+
+    font-family: var(--font-heading);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    line-height: 1.6;
+
+}
+
+
+.audio-subtitle {
+
+    color: var(--ink-soft);
+
+    font-size: 10px;
+
+    line-height: 1.6;
+
+}
+
+
+.birthday-audio {
+
+    display: block;
+
+    width: 100%;
+
+    height: 42px;
+
+    accent-color: var(--sage-deep);
+
+}
+
+
+.audio-help {
+
+    margin-top: 8px;
+
+    color: var(--ink-soft);
+
+    font-size: 10px;
+
+    line-height: 1.65;
+
+}
+
+
+
+/* ==========================================================
+   17. PAGE 5: MEMORY VIDEO
+========================================================== */
+
+.video-content {
+
+    gap: clamp(7px, 1.2vh, 12px);
+
+}
+
+
+.video-decoration {
+
+    display: grid;
+
+    place-items: center;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: 1px solid rgba(199, 170, 117, 0.38);
+
+    border-radius: 50%;
+
+    color: var(--rose-deep);
+
+    background: rgba(255, 253, 248, 0.77);
+
+    font-size: 24px;
+
+}
+
+
+.video-frame {
+
+    position: relative;
+
+    flex: 0 1 auto;
+
+    width: min(100%, 490px);
+
+    max-height: 30vh;
+
+    padding: 7px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(199, 170, 117, 0.58);
+
+    border-radius: var(--radius-medium);
+
+    background: rgba(255, 253, 248, 0.92);
+
+    box-shadow: var(--shadow-card);
+
+}
+
+
+.birthday-video {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: calc(30vh - 14px);
+
+    aspect-ratio: 16 / 9;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    background: #3f4940;
+
+}
+
+
+.download-button {
+
+    color: var(--sage-deep);
+
+    background: rgba(255, 253, 248, 0.80);
+
+    border: 1px solid rgba(142, 161, 132, 0.48);
+
+}
+
+
+.download-button:hover {
+
+    color: var(--sage-dark);
+
+    background: var(--sage-light);
+
+    border-color: var(--sage);
+
+    transform: translateY(-2px);
+
+}
+
+
+.download-button:active {
+
+    transform: scale(0.985);
+
+}
+
+
+
+/* ==========================================================
+   18. PAGE 6: PERSONAL MESSAGE
+========================================================== */
+
+.message-content {
+
+    gap: clamp(6px, 1vh, 10px);
+
+}
+
+
+.message-heart {
+
+    display: grid;
+
+    place-items: center;
+
+    width: clamp(37px, 6vh, 48px);
+
+    aspect-ratio: 1;
+
+    border: 1px solid rgba(185, 127, 130, 0.37);
+
+    border-radius: 50%;
+
+    color: var(--rose-deep);
+
+    background: linear-gradient(
+        145deg,
+        #fffdf9,
+        var(--rose-light)
+    );
+
+    box-shadow: var(--shadow-soft);
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(22px, 4vh, 31px);
+
+    animation: heartBeatSoft 4s ease-in-out infinite;
+
+}
+
+
+.personal-message-card {
+
+    position: relative;
+
+    width: min(100%, 540px);
+
+    padding: clamp(13px, 2.2vh, 24px) clamp(17px, 3vw, 30px);
+
+    border: 1px solid rgba(199, 170, 117, 0.40);
+
+    border-radius: var(--radius-medium);
+
+    background: rgba(255, 253, 248, 0.86);
+
+    box-shadow: var(--shadow-card);
+
+    text-align: center;
+
+}
+
+
+.personal-message-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 6px;
+
+    border: 1px solid rgba(199, 170, 117, 0.15);
+
+    border-radius: 15px;
+
+    pointer-events: none;
+
+}
+
+
+.message-greeting {
+
+    position: relative;
+
+    color: var(--sage-deep);
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(12px, 1.8vw, 15px);
+
+    font-weight: 700;
+
+    line-height: 1.9;
+
+}
+
+
+.message-divider {
+
+    margin-block: 5px;
+
+    color: var(--champagne);
+
+    font-size: 16px;
+
+    line-height: 1.5;
+
+}
+
+
+.personal-message {
+
+    position: relative;
+
+    margin-block: clamp(3px, 0.6vh, 6px);
+
+    color: var(--ink-soft);
+
+    font-size: clamp(11px, 1.5vw, 13px);
+
+    line-height: 1.9;
+
+}
+
+
+.message-signature {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: clamp(9px, 1.5vh, 15px);
+
+    color: var(--ink-soft);
+
+    font-family: var(--font-heading);
+
+    font-size: 12px;
+
+    line-height: 1.8;
+
+}
+
+
+.signature-name {
+
+    color: var(--rose-deep);
+
+    font-size: clamp(14px, 2vw, 17px);
+
+    font-weight: 700;
+
+}
+
+
+
+/* ==========================================================
+   19. PAGE 7: FINAL BLESSING
+========================================================== */
+
+.final-content {
+
+    gap: clamp(8px, 1.4vh, 15px);
+
+}
+
+
+.final-decoration {
+
+    position: absolute;
+
+    inset: 18% 7% auto;
+
+    height: 100px;
+
+    pointer-events: none;
+
+}
+
+
+.final-flower {
+
+    position: absolute;
+
+    color: rgba(185, 127, 130, 0.63);
+
+    font-size: 30px;
+
+    animation: gentleBloom 7s ease-in-out infinite;
+
+}
+
+
+.flower-left {
+
+    top: 0;
+
+    left: 7%;
+
+}
+
+
+.flower-right {
+
+    top: 35px;
+
+    right: 8%;
+
+    color: rgba(199, 170, 117, 0.75);
+
+    animation-delay: 1.8s;
+
+}
+
+
+.final-emblem {
+
+    display: grid;
+
+    place-items: center;
+
+    width: clamp(85px, 15vh, 116px);
+
+    aspect-ratio: 1;
+
+    color: var(--rose-deep);
+
+    border: 1px solid rgba(199, 170, 117, 0.55);
+
+    outline: 1px solid rgba(199, 170, 117, 0.3);
+
+    outline-offset: 6px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        145deg,
+        #fffdf8,
+        #f4e9dd
+    );
+
+    box-shadow:
+        0 10px 32px rgba(94, 97, 73, 0.08);
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(36px, 6vh, 49px);
+
+    animation: heartBeatSoft 4s ease-in-out infinite;
+
+}
+
+
+.final-heading {
+
+    color: var(--sage-dark);
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(33px, 5.6vw, 57px);
+
+    font-weight: 700;
+
+    line-height: 1.5;
+
+}
+
+
+.final-divider {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    width: min(200px, 70%);
+
+    color: var(--champagne);
+
+    font-size: 17px;
+
+}
+
+
+.final-divider span:not(:nth-child(2)) {
+
+    flex: 1;
+
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--champagne)
+    );
+
+}
+
+
+.final-divider span:last-child {
+
+    transform: rotate(180deg);
+
+}
+
+
+.final-blessing {
+
+    color: var(--rose-deep);
+
+    font-family: var(--font-heading);
+
+    font-size: clamp(17px, 2.4vw, 22px);
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+}
+
+
+.final-signature {
+
+    color: var(--ink-soft);
+
+    font-size: 12px;
+
+    line-height: 1.9;
+
+}
+
+
+.restart-button {
+
+    min-width: 155px;
+
+    margin-top: 3px;
+
+}
+
+
+
+/* ==========================================================
+   20. SLIDE PROGRESS DOTS
+========================================================== */
+
+.slide-progress {
+
+    position: absolute;
+
+    bottom: max(20px, env(safe-area-inset-bottom));
+
+    left: 50%;
+
+    z-index: 40;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 9px 13px;
+
+    border: 1px solid rgba(199, 170, 117, 0.28);
+
+    border-radius: var(--radius-pill);
+
+    background: rgba(255, 253, 248, 0.83);
+
+    box-shadow:
+        0 5px 18px rgba(63, 77, 60, 0.07);
+
+    transform: translateX(-50%);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+}
+
+
+.progress-dot {
+
+    display: grid;
+
+    place-items: center;
+
+    flex: 0 0 auto;
+
+    width: 19px;
+
+    height: 19px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    transition:
+        transform var(--transition-normal),
+        background-color var(--transition-normal);
+
+}
+
+
+.progress-dot span {
+
+    display: block;
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #c5c9bb;
+
+    transition:
+
+        width var(--transition-normal),
+
+        background-color var(--transition-normal),
+
+        box-shadow var(--transition-normal);
+
+}
+
+
+.progress-dot:hover {
+
+    transform: scale(1.13);
+
+}
+
+
+.progress-dot:hover span {
+
+    background: var(--rose-deep);
+
+}
+
+
+.progress-dot.is-current span {
+
+    width: 17px;
+
+    border-radius: var(--radius-pill);
+
+    background: var(--sage-deep);
+
+    box-shadow:
+        0 0 0 3px rgba(142, 161, 132, 0.15);
+
+}
+
+
+.progress-dot[aria-current="step"] span {
+
+    background: var(--sage-deep);
+
+}
+
+
+
+/* ==========================================================
+   21. MUSIC CONTROL
+========================================================== */
+
+.music-control {
+
+    position: absolute;
+
+    right: clamp(13px, 3vw, 35px);
+
+    bottom: max(20px, env(safe-area-inset-bottom));
+
+    z-index: 45;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.music-toggle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 39px;
+
+    padding: 7px 13px;
+
+    border: 1px solid rgba(142, 161, 132, 0.38);
+
+    border-radius: var(--radius-pill);
+
+    color: var(--sage-deep);
+
+    background: rgba(255, 253, 248, 0.88);
+
+    box-shadow:
+        0 5px 17px rgba(63, 77, 60, 0.07);
+
+    cursor: pointer;
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+
+        background-color var(--transition-normal),
+
+        border-color var(--transition-normal),
+
+        transform var(--transition-normal),
+
+        box-shadow var(--transition-normal);
+
+}
+
+
+.music-toggle:hover {
+
+    background: var(--sage-light);
+
+    border-color: var(--sage);
+
+    transform: translateY(-2px);
+
+}
+
+
+.music-toggle:active {
+
+    transform: scale(0.98);
+
+}
+
+
+.music-toggle-icon {
+
+    display: inline-block;
+
+    color: var(--rose-deep);
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    line-height: 1;
+
+}
+
+
+.music-toggle-label {
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.25px;
+
+}
+
+
+/*
+   Optional playing state.
+
+   JavaScript can add this class when music is playing.
+*/
+
+.music-toggle.is-playing .music-toggle-icon {
+
+    animation: musicIconFloat 1.8s ease-in-out infinite;
+
+}
+
+
+@keyframes musicIconFloat {
+
+    0%,
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+    50% {
+
+        transform: translateY(-3px);
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   22. FOOTER
+========================================================== */
+
+.site-footer {
+
+    position: absolute;
+
+    bottom: max(21px, env(safe-area-inset-bottom));
+
+    left: clamp(15px, 3vw, 35px);
+
+    z-index: 30;
+
+    pointer-events: none;
+
+}
+
+
+.site-footer p {
+
+    color: rgba(119, 119, 109, 0.77);
+
+    font-family: var(--font-heading);
+
+    font-size: 10px;
+
+    letter-spacing: 0.3px;
+
+}
+
+
+
+/* ==========================================================
+   23. DECORATIVE ELEMENTS
+========================================================== */
+
+.decorative-star,
+.final-flower,
+.music-note,
+.brand-mark-symbol {
+
+    -webkit-user-select: none;
+
+    user-select: none;
+
+}
+
+
+/*
+   Make sure hidden slides cannot receive interaction.
+
+   JavaScript should still control the actual hidden property.
+*/
+
+.slide:not(.is-active) {
+
+    pointer-events: none;
+
+}
+
+
+
+/* ==========================================================
+   24. IMAGE AND VIDEO SAFETY
+========================================================== */
+
+.blessing-image,
+.memory-image-wrap img,
+.birthday-video {
+
+    -webkit-user-drag: none;
+
+}
+
+
+/*
+   Do not stretch image frames when an image is missing.
+
+   Actual images must be placed at the file paths declared
+   in index.html.
+*/
+
+.blessing-image,
+.memory-image-wrap img {
+
+    color: var(--sage-deep);
+
+    font-size: 11px;
+
+}
+
+
+.birthday-video:focus-visible {
+
+    outline: 3px solid var(--champagne);
+
+    outline-offset: 3px;
+
+}
+
+
+
+/* ==========================================================
+   25. TABLET RESPONSIVENESS
+========================================================== */
+
+@media (min-width: 600px) {
+
+    .slide-content {
+
+        padding-left: 38px;
+
+        padding-right: 38px;
+
+    }
+
+
+    .photo-gallery {
+
+        gap: 22px;
+
+    }
+
+
+    .memory-card {
+
+        padding: 10px;
+
+    }
+
+
+    .site-header {
+
+        gap: 14px;
+
+    }
+
+
+    .brand-mark {
+
+        width: 47px;
+
+        height: 47px;
+
+    }
+
+
+    .brand-title {
+
+        font-size: 16px;
+
+    }
+
+
+    .brand-subtitle {
+
+        font-size: 11px;
+
+    }
+
+
+    .personal-message-card {
+
+        padding: 23px 34px;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   26. MOBILE RESPONSIVENESS
+========================================================== */
+
+@media (max-width: 480px) {
+
+    :root {
+
+        --content-top-space: 73px;
+
+        --content-bottom-space: 88px;
+
+    }
+
+
+    .site-header {
+
+        top: max(11px, env(safe-area-inset-top));
+
+        left: 13px;
+
+        gap: 9px;
+
+        max-width: calc(100% - 135px);
+
+    }
+
+
+    .brand-mark {
+
+        width: 36px;
+
+        height: 36px;
+
+    }
+
+
+    .brand-mark-symbol {
+
+        font-size: 19px;
+
+    }
+
+
+    .brand-text {
+
+        max-width: 180px;
+
+    }
+
+
+    .brand-title {
+
+        font-size: 12px;
+
+    }
+
+
+    .brand-subtitle {
+
+        font-size: 9px;
+
+    }
+
+
+    .slide-content {
+
+        gap: 8px;
+
+        padding-left: 16px;
+
+        padding-right: 16px;
+
+    }
+
+
+    .welcome-content {
+
+        gap: 8px;
+
+    }
+
+
+    .main-heading {
+
+        font-size: clamp(34px, 10vw, 47px);
+
+    }
+
+
+    .section-heading {
+
+        font-size: clamp(25px, 7.2vw, 34px);
+
+    }
+
+
+    .section-description {
+
+        font-size: 12px;
+
+        line-height: 1.8;
+
+    }
+
+
+    .welcome-description {
+
+        font-size: 13px;
+
+        line-height: 1.9;
+
+    }
+
+
+    .welcome-illustration {
+
+        width: clamp(78px, 12vh, 94px);
+
+    }
+
+
+    .illustration-center span {
+
+        font-size: 30px;
+
+    }
+
+
+    .welcome-decoration {
+
+        inset: 15% 5% auto;
+
+    }
+
+
+    .slide-navigation {
+
+        gap: 8px;
+
+        margin-top: 3px;
+
+    }
+
+
+    .slide-navigation .primary-button,
+    .slide-navigation .secondary-button {
+
+        min-height: 40px;
+
+        padding: 8px 12px;
+
+        font-size: 10px;
+
+        gap: 6px;
+
+    }
+
+
+    .primary-button,
+    .secondary-button,
+    .download-button {
+
+        font-size: 12px;
+
+    }
+
+
+    .photo-gallery {
+
+        gap: 7px;
+
+        width: 100%;
+
+    }
+
+
+    .memory-card {
+
+        padding: 5px;
+
+        border-radius: 6px;
+
+    }
+
+
+    .memory-card-two {
+
+        margin-top: 6px;
+
+    }
+
+
+    .memory-card figcaption {
+
+        padding-top: 5px;
+
+        font-size: 8px;
+
+    }
+
+
+    .blessing-image-frame {
+
+        width: clamp(140px, 23vh, 175px);
+
+        padding: 6px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .blessing-image {
+
+        height: clamp(85px, 16vh, 123px);
+
+    }
+
+
+    .section-symbol {
+
+        width: 36px;
+
+        height: 36px;
+
+        font-size: 25px;
+
+    }
+
+
+    .audio-player-card {
+
+        padding: 13px;
+
+        border-radius: 16px;
+
+    }
+
+
+    .audio-card-heading {
+
+        gap: 9px;
+
+        margin-bottom: 9px;
+
+    }
+
+
+    .audio-card-icon {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .audio-title {
+
+        font-size: 12px;
+
+    }
+
+
+    .audio-subtitle {
+
+        font-size: 9px;
+
+    }
+
+
+    .birthday-audio {
+
+        height: 40px;
+
+    }
+
+
+    .video-frame {
+
+        max-height: 26vh;
+
+        padding: 5px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .birthday-video {
+
+        max-height: calc(26vh - 10px);
+
+        border-radius: 10px;
+
+    }
+
+
+    .personal-message-card {
+
+        padding: 12px 14px;
+
+        border-radius: 16px;
+
+    }
+
+
+    .personal-message-card::before {
+
+        inset: 4px;
+
+        border-radius: 12px;
+
+    }
+
+
+    .message-greeting {
+
+        font-size: 11px;
+
+    }
+
+
+    .personal-message {
+
+        font-size: 10px;
+
+        line-height: 1.75;
+
+    }
+
+
+    .message-signature {
+
+        margin-top: 7px;
+
+        font-size: 10px;
+
+    }
+
+
+    .signature-name {
+
+        font-size: 13px;
+
+    }
+
+
+    .final-heading {
+
+        font-size: clamp(31px, 9vw, 43px);
+
+    }
+
+
+    .final-description {
+
+        font-size: 12px;
+
+    }
+
+
+    .final-blessing {
+
+        font-size: 17px;
+
+    }
+
+
+    .final-emblem {
+
+        width: clamp(80px, 13vh, 96px);
+
+    }
+
+
+    .final-decoration {
+
+        inset: 17% 3% auto;
+
+    }
+
+
+    .final-flower {
+
+        font-size: 23px;
+
+    }
+
+
+    .slide-progress {
+
+        bottom: max(17px, env(safe-area-inset-bottom));
+
+        gap: 3px;
+
+        padding: 7px 8px;
+
+    }
+
+
+    .progress-dot {
+
+        width: 17px;
+
+        height: 18px;
+
+    }
+
+
+    .progress-dot span {
+
+        width: 5px;
+
+        height: 5px;
+
+    }
+
+
+    .progress-dot.is-current span {
+
+        width: 14px;
+
+    }
+
+
+    .music-control {
+
+        right: 10px;
+
+        bottom: max(17px, env(safe-area-inset-bottom));
+
+    }
+
+
+    .music-toggle {
+
+        min-height: 34px;
+
+        gap: 5px;
+
+        padding: 6px 9px;
+
+    }
+
+
+    .music-toggle-icon {
+
+        font-size: 16px;
+
+    }
+
+
+    .music-toggle-label {
+
+        font-size: 9px;
+
+    }
+
+
+    .site-footer {
+
+        display: none;
+
+    }
+
+
+    .background-decoration-one {
+
+        top: -100px;
+
+        right: -100px;
+
+    }
+
+
+    .background-decoration-two {
+
+        bottom: -110px;
+
+        left: -120px;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   27. VERY SMALL PHONES
+========================================================== */
+
+@media (max-width: 360px) {
+
+    :root {
+
+        --content-top-space: 66px;
+
+        --content-bottom-space: 80px;
+
+    }
+
+
+    .slide-content {
+
+        gap: 6px;
+
+        padding-left: 11px;
+
+        padding-right: 11px;
+
+    }
+
+
+    .welcome-content {
+
+        gap: 6px;
+
+    }
+
+
+    .main-heading {
+
+        font-size: 32px;
+
+    }
+
+
+    .section-heading {
+
+        font-size: 25px;
+
+    }
+
+
+    .welcome-illustration {
+
+        width: 72px;
+
+    }
+
+
+    .welcome-description {
+
+        font-size: 12px;
+
+    }
+
+
+    .section-description {
+
+        font-size: 11px;
+
+    }
+
+
+    .slide-navigation {
+
+        gap: 6px;
+
+    }
+
+
+    .slide-navigation .primary-button,
+    .slide-navigation .secondary-button {
+
+        padding-inline: 9px;
+
+        font-size: 9px;
+
+    }
+
+
+    .photo-gallery {
+
+        gap: 5px;
+
+    }
+
+
+    .memory-card {
+
+        padding: 4px;
+
+    }
+
+
+    .memory-card figcaption {
+
+        font-size: 7px;
+
+    }
+
+
+    .personal-message-card {
+
+        padding: 10px 11px;
+
+    }
+
+
+    .personal-message {
+
+        font-size: 9px;
+
+    }
+
+
+    .music-toggle-label {
+
+        font-size: 8px;
+
+    }
+
+
+    .music-toggle {
+
+        padding-inline: 7px;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   28. SHORT SCREENS AND LANDSCAPE PHONES
+
+   Reduce ornament sizes and spacing rather than adding
+   a scrolling page.
+========================================================== */
+
+@media (max-height: 700px) {
+
+    :root {
+
+        --content-top-space: 65px;
+
+        --content-bottom-space: 82px;
+
+    }
+
+
+    .slide-content {
+
+        gap: 7px;
+
+    }
+
+
+    .welcome-content {
+
+        gap: 6px;
+
+    }
+
+
+    .welcome-illustration {
+
+        width: clamp(65px, 12vh, 90px);
+
+    }
+
+
+    .main-heading {
+
+        font-size: clamp(30px, 6vh, 47px);
+
+    }
+
+
+    .section-heading {
+
+        font-size: clamp(24px, 4.7vh, 34px);
+
+    }
+
+
+    .music-illustration {
+
+        width: clamp(78px, 14vh, 108px);
+
+    }
+
+
+    .blessing-image-frame {
+
+        width: clamp(120px, 21vh, 170px);
+
+    }
+
+
+    .blessing-image {
+
+        height: clamp(75px, 15vh, 115px);
+
+    }
+
+
+    .final-emblem {
+
+        width: clamp(68px, 12vh, 88px);
+
+    }
+
+
+    .final-decoration {
+
+        inset-block-start: 14%;
+
+    }
+
+
+    .video-frame {
+
+        max-height: 26vh;
+
+    }
+
+
+    .birthday-video {
+
+        max-height: calc(26vh - 14px);
+
+    }
+
+
+    .personal-message-card {
+
+        padding-block: 12px;
+
+    }
+
+
+    .personal-message {
+
+        line-height: 1.7;
+
+    }
+
+
+    .message-signature {
+
+        margin-top: 6px;
+
+    }
+
+}
+
+
+@media (max-height: 560px) and (orientation: landscape) {
+
+    :root {
+
+        --content-top-space: 54px;
+
+        --content-bottom-space: 63px;
+
+    }
+
+
+    .site-header {
+
+        top: 6px;
+
+        left: 12px;
+
+        gap: 7px;
+
+    }
+
+
+    .brand-mark {
+
+        width: 30px;
+
+        height: 30px;
+
+    }
+
+
+    .brand-title {
+
+        font-size: 11px;
+
+    }
+
+
+    .brand-subtitle {
+
+        font-size: 8px;
+
+    }
+
+
+    .slide-content {
+
+        gap: 5px;
+
+        padding-left: 12px;
+
+        padding-right: 12px;
+
+    }
+
+
+    .welcome-illustration {
+
+        width: 52px;
+
+    }
+
+
+    .main-heading {
+
+        font-size: clamp(25px, 5.7vh, 33px);
+
+        line-height: 1.23;
+
+    }
+
+
+    .section-heading {
+
+        font-size: clamp(21px, 5vh, 28px);
+
+        line-height: 1.28;
+
+    }
+
+
+    .eyebrow {
+
+        font-size: 9px;
+
+    }
+
+
+    .welcome-description,
+    .section-description {
+
+        font-size: 10px;
+
+        line-height: 1.6;
+
+    }
+
+
+    .welcome-caption {
+
+        font-size: 10px;
+
+    }
+
+
+    .welcome-divider {
+
+        width: 130px;
+
+    }
+
+
+    .section-symbol {
+
+        width: 28px;
+
+        height: 28px;
+
+        font-size: 19px;
+
+    }
+
+
+    .blessing-image-frame {
+
+        width: 125px;
+
+        padding: 4px;
+
+    }
+
+
+    .blessing-image {
+
+        height: 66px;
+
+    }
+
+
+    .image-caption {
+
+        padding-top: 2px;
+
+        font-size: 8px;
+
+    }
+
+
+    .blessing-quote {
+
+        font-size: 10px;
+
+    }
+
+
+    .photo-gallery {
+
+        width: min(58vw, 440px);
+
+        gap: 10px;
+
+    }
+
+
+    .memory-card {
+
+        padding: 4px;
+
+    }
+
+
+    .memory-image-wrap {
+
+        aspect-ratio: 5 / 4;
+
+    }
+
+
+    .memory-card figcaption {
+
+        padding-top: 2px;
+
+        font-size: 8px;
+
+    }
+
+
+    .music-illustration {
+
+        width: 62px;
+
+    }
+
+
+    .audio-player-card {
+
+        width: min(75vw, 350px);
+
+        padding: 7px 11px;
+
+    }
+
+
+    .audio-card-heading {
+
+        margin-bottom: 4px;
+
+    }
+
+
+    .audio-card-icon {
+
+        width: 28px;
+
+        height: 28px;
+
+        font-size: 17px;
+
+    }
+
+
+    .audio-title {
+
+        font-size: 10px;
+
+    }
+
+
+    .audio-subtitle {
+
+        font-size: 8px;
+
+    }
+
+
+    .birthday-audio {
+
+        height: 32px;
+
+    }
+
+
+    .audio-help {
+
+        margin-top: 3px;
+
+        font-size: 8px;
+
+    }
+
+
+    .video-frame {
+
+        width: min(53vw, 340px);
+
+        max-height: 31vh;
+
+        padding: 4px;
+
+    }
+
+
+    .birthday-video {
+
+        max-height: calc(31vh - 8px);
+
+    }
+
+
+    .personal-message-card {
+
+        width: min(82vw, 540px);
+
+        padding: 7px 13px;
+
+    }
+
+
+    .message-heart {
+
+        width: 28px;
+
+        font-size: 17px;
+
+    }
+
+
+    .message-greeting {
+
+        font-size: 10px;
+
+    }
+
+
+    .personal-message {
+
+        margin-block: 1px;
+
+        font-size: 9px;
+
+        line-height: 1.5;
+
+    }
+
+
+    .message-divider {
+
+        margin-block: 1px;
+
+        font-size: 12px;
+
+    }
+
+
+    .message-signature {
+
+        margin-top: 3px;
+
+        font-size: 9px;
+
+    }
+
+
+    .signature-name {
+
+        font-size: 11px;
+
+    }
+
+
+    .final-emblem {
+
+        width: 54px;
+
+        font-size: 25px;
+
+    }
+
+
+    .final-heading {
+
+        font-size: clamp(25px, 5.5vh, 32px);
+
+        line-height: 1.3;
+
+    }
+
+
+    .final-description {
+
+        font-size: 10px;
+
+        line-height: 1.6;
+
+    }
+
+
+    .final-signature {
+
+        font-size: 9px;
+
+        line-height: 1.5;
+
+    }
+
+
+    .final-small-text {
+
+        font-size: 9px;
+
+    }
+
+
+    .primary-button,
+    .secondary-button,
+    .download-button {
+
+        min-height: 33px;
+
+        padding: 6px 13px;
+
+        font-size: 10px;
+
+    }
+
+
+    .slide-navigation {
+
+        gap: 8px;
+
+        margin-top: 2px;
+
+    }
+
+
+    .slide-navigation .primary-button,
+    .slide-navigation .secondary-button {
+
+        min-height: 31px;
+
+        padding: 5px 10px;
+
+        font-size: 9px;
+
+    }
+
+
+    .text-button {
+
+        min-height: 24px;
+
+        font-size: 9px;
+
+    }
+
+
+    .slide-progress {
+
+        bottom: max(8px, env(safe-area-inset-bottom));
+
+        padding: 3px 6px;
+
+    }
+
+
+    .progress-dot {
+
+        width: 15px;
+
+        height: 15px;
+
+    }
+
+
+    .music-control {
+
+        bottom: max(8px, env(safe-area-inset-bottom));
+
+    }
+
+
+    .music-toggle {
+
+        min-height: 29px;
+
+        padding: 4px 8px;
+
+    }
+
+
+    .site-footer {
+
+        display: none;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   29. LARGE DESKTOP SCREENS
+========================================================== */
+
+@media (min-width: 1100px) {
+
+    .slide-content {
+
+        padding-left: 60px;
+
+        padding-right: 60px;
+
+    }
+
+
+    .main-heading {
+
+        font-size: 65px;
+
+    }
+
+
+    .section-heading {
+
+        font-size: 45px;
+
+    }
+
+
+    .photo-gallery {
+
+        width: 620px;
+
+    }
+
+
+    .memory-card {
+
+        padding: 10px;
+
+    }
+
+
+    .blessing-image-frame {
+
+        width: 205px;
+
+    }
+
+
+    .blessing-image {
+
+        height: 150px;
+
+    }
+
+
+    .audio-player-card {
+
+        width: 420px;
+
+    }
+
+
+    .personal-message-card {
+
+        width: 540px;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   30. TOUCH DEVICES
+
+   Avoid hover-dependent interactions.
+========================================================== */
+
+@media (hover: none) {
+
+    .primary-button:hover,
+    .secondary-button:hover,
+    .download-button:hover,
+    .music-toggle:hover {
+
+        transform: none;
+
+    }
+
+
+    .memory-card:hover {
+
+        box-shadow:
+            0 7px 19px rgba(65, 70, 54, 0.10);
+
+    }
+
+
+    .memory-card:hover .memory-image-wrap img {
+
+        transform: none;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   31. ACCESSIBILITY: REDUCED MOTION
+
+   Respect devices whose users prefer fewer animations.
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        transition-delay: 0ms !important;
+
+    }
+
+
+    .petal-layer {
+
+        display: none;
+
+    }
+
+
+    .slide {
+
+        transform: none;
+
+    }
+
+
+    .slide.is-active {
+
+        transform: none;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   32. BROWSER FALLBACKS
+
+   The translucent glass effects are decorative.
+   The interface must still work without backdrop-filter.
+========================================================== */
+
+@supports not (
+    (backdrop-filter: blur(12px)) or
+    (-webkit-backdrop-filter: blur(12px))
+) {
+
+    .slide-progress,
+    .music-toggle {
+
+        background: rgba(255, 253, 248, 0.98);
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   33. FINAL SAFETY RULES
+========================================================== */
+
+/*
+   Prevent horizontal overflow.
+
+   This does not change the slide-navigation logic.
+*/
+
+html,
+body,
+.website-wrapper,
+.slide-deck,
+.slide {
+
+    max-width: 100%;
+
+}
+
+
+/*
+   Ensure page navigation controls remain clickable.
+*/
+
+.slide-progress,
+.music-control {
+
+    pointer-events: auto;
+
+}
+
+
+/*
+   Decorations must never intercept taps.
+*/
+
+.background-decoration,
+.petal-layer,
+.welcome-decoration,
+.final-decoration,
+.decorative-star {
+
+    pointer-events: none;
+
+}
+
+
+/*
+   END OF STYLESHEET
+========================================================== */

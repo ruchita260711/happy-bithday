@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <!-- =====================================================
+         BASIC WEBSITE INFORMATION
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta name="theme-color" content="#f8f5ed">
+
+    <meta
+        name="description"
+        content="A special birthday surprise filled with love, blessings, beautiful memories, and happiness."
+    >
+
+    <title>एक प्यारा-सा तोहफा | Birthday Surprise</title>
+
+
+    <!-- =====================================================
+         EXTERNAL STYLESHEET
+
+         File location:
+         birthday-website/style.css
+    ====================================================== -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         WEBSITE WRAPPER
+
+         All seven pages belong inside this wrapper.
+         This is a slide-based website, not a scrolling page.
+    ====================================================== -->
+
+    <div class="website-wrapper" id="websiteWrapper">
+
+
+        <!-- =================================================
+             BACKGROUND DECORATIONS
+
+             These decorations are visual only.
+             They should never block buttons or navigation.
+        ================================================== -->
+
+        <div
+            class="background-decoration background-decoration-one"
+            aria-hidden="true"
+        ></div>
+
+        <div
+            class="background-decoration background-decoration-two"
+            aria-hidden="true"
+        ></div>
+
+        <div
+            class="background-decoration background-decoration-three"
+            aria-hidden="true"
+        ></div>
+
+
+        <!-- Decorative petals can be added here by JavaScript. -->
+
+        <div
+            class="petal-layer"
+            id="petalLayer"
+            aria-hidden="true"
+        ></div>
+
+
+        <!-- =================================================
+             TOP BRANDING
+        ================================================== -->
+
+        <header class="site-header">
+
+            <div class="brand-mark" aria-hidden="true">
+                <span class="brand-mark-symbol">✿</span>
+            </div>
+
+            <div class="brand-text">
+                <p class="brand-title">एक छोटो-सा तोहफो</p>
+
+                <p class="brand-subtitle">
+                    प्यार, यादां अर आशीर्वाद
+                </p>
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             MAIN SLIDE AREA
+
+             IMPORTANT:
+             Every page uses:
+                 class="slide"
+                 data-slide="NUMBER"
+
+             Only the first slide is visible initially.
+
+             JavaScript will manage the other slides.
+        ================================================== -->
+
+        <main class="slide-deck" id="slideDeck">
+
+
+            <!-- =============================================
+                 PAGE 1: WELCOME
+            ============================================== -->
+
+            <section
+                class="slide slide-welcome is-active"
+                id="slideWelcome"
+                data-slide="0"
+                aria-labelledby="welcomeHeading"
+                aria-hidden="false"
+            >
+
+                <div class="slide-content welcome-content">
+
+                    <div class="welcome-decoration" aria-hidden="true">
+
+                        <span class="decorative-star star-one">✧</span>
+
+                        <span class="decorative-star star-two">✦</span>
+
+                        <span class="decorative-star star-three">✧</span>
+
+                    </div>
+
+
+                    <p class="eyebrow">
+                        ॥ श्री जिनेन्द्राय नमः ॥
+                    </p>
+
+
+                    <div class="welcome-illustration" aria-hidden="true">
+
+                        <div class="illustration-ring ring-one"></div>
+
+                        <div class="illustration-ring ring-two"></div>
+
+                        <div class="illustration-center">
+                            <span>❀</span>
+                        </div>
+
+                    </div>
+
+
+                    <h1
+                        class="main-heading"
+                        id="welcomeHeading"
+                    >
+                        म्हारी प्यारी<br>
+                        माँ 
+                    </h1>
+
+
+                    <p class="welcome-description">
+                        थांरे वास्ते एक नानो-सो तोहफो,
+                        <br>
+                        बस थांरी मुस्कान खातर।
+                    </p>
+
+
+                    <div class="welcome-divider" aria-hidden="true">
+                        <span></span>
+                        <span class="divider-flower">❀</span>
+                        <span></span>
+                    </div>
+
+
+                    <p class="welcome-caption">
+                        प्यार सूं बनायो है...
+                    </p>
+
+
+                    <!--
+                        This button intentionally does NOT use data-next.
+
+                        JavaScript will handle this specific button once,
+                        preventing accidental double navigation.
+                    -->
+
+                    <button
+                        class="primary-button"
+                        id="openSurprise"
+                        type="button"
+                    >
+
+                        <span class="button-label">
+                            तोहफो देखो
+                        </span>
+
+                        <span class="button-arrow" aria-hidden="true">
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <!-- Optional spoken greeting -->
+
+                    <button
+                        class="text-button"
+                        id="speakGreeting"
+                        type="button"
+                    >
+                        प्यार भर्यो संदेश सुनो ♡
+                    </button>
+
+
+                    <p
+                        class="status-message"
+                        id="statusMessage"
+                        role="status"
+                        aria-live="polite"
+                    ></p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 PAGE 2: BLESSINGS
+            ============================================== -->
+
+            <section
+                class="slide slide-blessings"
+                id="slideBlessings"
+                data-slide="1"
+                aria-labelledby="blessingsHeading"
+                aria-hidden="true"
+                hidden
+            >
+
+                <div class="slide-content blessing-content">
+
+                    <p class="eyebrow">
+                        शुभ दिन · शुभ भावना
+                    </p>
+
+
+                    <div class="section-symbol" aria-hidden="true">
+                        ❀
+                    </div>
+
+
+                    <h2
+                        class="section-heading"
+                        id="blessingsHeading"
+                    >
+                        प्रभु री कृपा<br>
+                        सदा बनी रहै
+                    </h2>
+
+
+                    <p class="section-description">
+                        थांरे जीवन में सुख, शांति अर आनंद रहै।
+                        <br>
+                        हर दिन नई खुशी लेर आवै।
+                    </p>
+
+
+                    <!--
+                        Replace this image with your own
+                        Jain devotional image when available.
+
+                        Exact path:
+                        assets/images/jain-blessing.png
+                    -->
+
+                    <figure class="blessing-image-frame">
+
+                        <img
+                            class="blessing-image"
+                            src="assets/images/jain-blessing.png"
+                            alt="जैन धर्म से जुड़ी एक सुंदर धार्मिक तस्वीर"
+                            loading="lazy"
+                        >
+
+                        <figcaption class="image-caption">
+                            जय जिनेन्द्र सा
+                        </figcaption>
+
+                    </figure>
+
+
+                    <p class="blessing-quote">
+                        "धर्म, प्रेम अर शांति
+                        जीवन रा सच्चा आभूषण है।"
+                    </p>
+
+
+                    <div class="slide-navigation">
+
+                        <button
+                            class="secondary-button"
+                            type="button"
+                            data-prev
+                        >
+                            <span aria-hidden="true">←</span>
+                            पिछलो पन्नो
+                        </button>
+
+
+                        <button
+                            class="primary-button"
+                            type="button"
+                            data-next
+                        >
+                            अगलो पन्नो
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 PAGE 3: PHOTO MEMORIES
+            ============================================== -->
+
+            <section
+                class="slide slide-photos"
+                id="slidePhotos"
+                data-slide="2"
+                aria-labelledby="photosHeading"
+                aria-hidden="true"
+                hidden
+            >
+
+                <div class="slide-content photos-content">
+
+                    <p class="eyebrow">
+                        यादां रा रंग
+                    </p>
+
+
+                    <h2
+                        class="section-heading"
+                        id="photosHeading"
+                    >
+                        प्यारी-प्यारी<br>
+                        यादां
+                    </h2>
+
+
+                    <p class="section-description">
+                        कुछ पल दिल में हमेशा वास्ते बस जावै।
+                    </p>
+
+
+                    <!--
+                        Add your photographs to:
+
+                        assets/images/photo-1.jpg
+                        assets/images/photo-2.jpg
+                        assets/images/photo-3.jpg
+                    -->
+
+                    <div class="photo-gallery">
+
+
+                        <!-- MEMORY PHOTO 1 -->
+
+                        <figure class="memory-card memory-card-one">
+
+                            <div class="memory-image-wrap">
+
+                                <img
+                                    src="assets/images/photo-1.jpg"
+                                    alt="एक प्यारी पारिवारिक याद"
+                                    loading="lazy"
+                                >
+
+                            </div>
+
+                            <figcaption>
+                                प्यारी याद ♡
+                            </figcaption>
+
+                        </figure>
+
+
+
+                        <!-- MEMORY PHOTO 2 -->
+
+                        <figure class="memory-card memory-card-two">
+
+                            <div class="memory-image-wrap">
+
+                                <img
+                                    src="assets/images/photo-2.jpg"
+                                    alt="खुशी भरा एक यादगार पल"
+                                    loading="lazy"
+                                >
+
+                            </div>
+
+                            <figcaption>
+                                अनमोल पल ✿
+                            </figcaption>
+
+                        </figure>
+
+
+
+                        <!-- MEMORY PHOTO 3 -->
+
+                        <figure class="memory-card memory-card-three">
+
+                            <div class="memory-image-wrap">
+
+                                <img
+                                    src="assets/images/photo-3.jpg"
+                                    alt="परिवार की एक खास तस्वीर"
+                                    loading="lazy"
+                                >
+
+                            </div>
+                            
+
+                            <figcaption>
+                                दिल री खुशी ♡
+                            </figcaption>
+
+                        </figure>
+
+
+                    </div>
+                    
+
+                    <p class="photo-note">
+                        हर तस्वीर में एक कहानी छुपी है।
+                    </p>
+
+
+                    <div class="slide-navigation">
+
+                        <button
+                            class="secondary-button"
+                            type="button"
+                            data-prev
+                        >
+                            <span aria-hidden="true">←</span>
+                            पिछलो पन्नो
+                        </button>
+
+
+                        <button
+                            class="primary-button"
+                            type="button"
+                            data-next
+                        >
+                            अगलो पन्नो
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 PAGE 4: BIRTHDAY SONG
+            ============================================== -->
+
+            <section
+                class="slide slide-song"
+                id="slideSong"
+                data-slide="3"
+                aria-labelledby="songHeading"
+                aria-hidden="true"
+                hidden
+            >
+
+                <div class="slide-content song-content">
+
+                    <p class="eyebrow">
+                        सुरां में बस्यो प्यार
+                    </p>
+
+
+                    <div class="music-illustration" aria-hidden="true">
+
+                        <div class="music-circle music-circle-one"></div>
+
+                        <div class="music-circle music-circle-two"></div>
+
+                        <div class="music-note note-one">♫</div>
+
+                        <div class="music-note note-two">♪</div>
+
+                        <div class="music-center">
+                            ♡
+                        </div>
+
+                    </div>
+
+
+                    <h2
+                        class="section-heading"
+                        id="songHeading"
+                    >
+                        थांरे नाम<br>
+                        एक प्यारी धुन
+                    </h2>
+
+
+                    <p class="section-description">
+                        थोड़ा संगीत, थोड़ी खुशी,
+                        <br>
+                        अर ढेर सारो प्यार।
+                    </p>
+
+
+                    <div class="audio-player-card">
+
+                        <div class="audio-card-heading">
+
+                            <span class="audio-card-icon" aria-hidden="true">
+                                ♫
+                            </span>
+
+                            <div>
+
+                                <p class="audio-title">
+                                    जन्मदिन री धुन
+                                </p>
+
+                                <p class="audio-subtitle">
+                                    एक खास पल खातर
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!--
+                            Put your birthday song here:
+
+                            assets/audio/birthday-song.mp3
+
+                            The browser audio player is available
+                            even if JavaScript is not yet running.
+                        -->
+
+                        <audio
+                            id="birthdaySong"
+                            class="birthday-audio"
+                            controls
+                            preload="metadata"
+                        >
+                            <source
+                                src="assets/audio/birthday-song.mp3"
+                                type="audio/mpeg"
+                            >
+
+                            आपका ब्राउज़र ऑडियो चलाने में असमर्थ है।
+
+                        </audio>
+
+
+                        <p class="audio-help">
+                            गानो सुनण खातर प्ले बटन दबावो।
+                        </p>
+
+                    </div>
+
+
+                    <div class="slide-navigation">
+
+                        <button
+                            class="secondary-button"
+                            type="button"
+                            data-prev
+                        >
+                            <span aria-hidden="true">←</span>
+                            पिछलो पन्नो
+                        </button>
+
+
+                        <button
+                            class="primary-button"
+                            type="button"
+                            data-next
+                        >
+                            अगलो पन्नो
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 PAGE 5: VIDEO MEMORY
+            ============================================== -->
+
+            <section
+                class="slide slide-video"
+                id="slideVideo"
+                data-slide="4"
+                aria-labelledby="videoHeading"
+                aria-hidden="true"
+                hidden
+            >
+
+                <div class="slide-content video-content">
+
+                    <p class="eyebrow">
+                        एक खास याद
+                    </p>
+
+
+                    <div class="video-decoration" aria-hidden="true">
+                        <span>❀</span>
+                    </div>
+
+
+                    <h2
+                        class="section-heading"
+                        id="videoHeading"
+                    >
+                        एक छोटो-सो<br>
+                        यादगार पल
+                    </h2>
+
+
+                    <p class="section-description">
+                        कुछ यादां तस्वीरां सूं भी ज्यादा खास होवै।
+                    </p>
+
+
+                    <!--
+                        Put your video here:
+
+                        assets/video/birthday-memory.mp4
+
+                        Optional poster image:
+
+                        assets/images/video-cover.jpg
+
+                        Replace the placeholder files with real files.
+                    -->
+
+                   <video
+    id="birthdayVideo"
+    controls
+    playsinline
+    preload="metadata"
+    poster="assets/images/video-cover.jpg"
+    style="
+        display: block;
+        width: min(50%, 180px);
+        aspect-ratio: 9 / 16;
+        height: auto;
+        object-fit: contain;
+        margin: 0 auto;
+        border-radius: 18px;
+        background: #854b6e;
+    "
+>
+    <source
+        src="assets/video/birthday-memory.mp4"
+        type="video/mp4"
+    >
+
+    Your browser does not support HTML video.
+</video>
+
+
+                    <p class="video-caption">
+                        ई याद हमेशा दिल के करीब रहै।
+                    </p>
+
+
+                    <!--
+                        The download link points to the local video file.
+                        Replace it if you later use a hosted download link.
+                    -->
+
+                    <a
+                        class="download-button"
+                        id="downloadVideo"
+                        href="assets/video/birthday-memory.mp4"
+                        download="birthday-memory.mp4"
+                    >
+                        <span aria-hidden="true">↓</span>
+                        वीडियो डाउनलोड करो
+                    </a>
+
+
+                    <div class="slide-navigation">
+
+                        <button
+                            class="secondary-button"
+                            type="button"
+                            data-prev
+                        >
+                            <span aria-hidden="true">←</span>
+                            पिछलो पन्नो
+                        </button>
+
+
+                        <button
+                            class="primary-button"
+                            type="button"
+                            data-next
+                        >
+                            अगलो पन्नो
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 PAGE 6: PERSONAL MESSAGE
+            ============================================== -->
+
+            <section
+                class="slide slide-message"
+                id="slideMessage"
+                data-slide="5"
+                aria-labelledby="messageHeading"
+                aria-hidden="true"
+                hidden
+            >
+
+                <div class="slide-content message-content">
+
+                    <p class="eyebrow">
+                        दिल री बात
+                    </p>
+
+
+                    <div class="message-heart" aria-hidden="true">
+                        ♡
+                    </div>
+
+
+                    <h2
+                        class="section-heading"
+                        id="messageHeading"
+                    >
+                        म्हारी प्यारी<br>
+                        माँ सा
+                    </h2>
+
+
+                    <div class="personal-message-card">
+
+                        <p class="message-greeting">
+                            थांने जन्मदिन री घणी-घणी बधाई।
+                        </p>
+
+
+                        <div class="message-divider" aria-hidden="true">
+                            ✿
+                        </div>
+
+
+                        <p class="personal-message">
+                            थांरो प्यार म्हारे वास्ते
+                            सबसे अनमोल है।
+                        </p>
+
+
+                        <p class="personal-message">
+                            भगवान थांने हमेशा खुश राखै,
+                            स्वस्थ राखै अर हर खुशी देवै।
+                        </p>
+
+
+                        <p class="personal-message">
+                            थांरी मुस्कान सदा यूं ही बनी रहै।
+                        </p>
+
+
+                        <p class="personal-message">
+                            थांरे जीवन में सुख, शांति
+                            अर प्रेम सदा रहै।
+                        </p>
+
+
+                        <div class="message-signature">
+
+                            प्यार सूं,
+
+                            <span class="signature-name">
+                                थांरी रुचिता ❤️
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="slide-navigation">
+
+                        <button
+                            class="secondary-button"
+                            type="button"
+                            data-prev
+                        >
+                            <span aria-hidden="true">←</span>
+                            पिछलो पन्नो
+                        </button>
+
+
+                        <button
+                            class="primary-button"
+                            type="button"
+                            data-next
+                        >
+                            अगलो पन्नो
+                            <span aria-hidden="true">→</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+<!-- FINAL FAMILY PHOTO PAGE -->
+<section
+    class="slide"
+    id="slide-family"
+    data-slide="7"
+    aria-hidden="true"
+    hidden
+>
+    <div class="slide-content family-content">
+
+        <p class="eyebrow">हमारो प्यारो परिवार</p>
+
+        <h1 class="family-title">
+            परिवार रो प्यार ❤️
+        </h1>
+
+        <div class="family-photo-frame">
+            <img
+                src="assets/images/family-photo.jpg"
+                alt="Our beautiful family together"
+                loading="lazy"
+                
+    style="display:block; width:100%; max-width:500px; height:400px; object-fit:cover; object-position:center; margin:0 auto; border-radius:18px;"
+            >
+        </div>
+
+        <p class="family-message">
+            परिवार साथ हो, तो हर पल खास बन जावै। ❤️
+            <br>
+            थां सब रो प्यार यूँ ही बण्या रहै,
+            अर घर हमेशा खुशियों सूं भर्यो रहै।
+        </p>
+
+        <p class="family-signature">
+            ढेर सारो प्यार ❤️
+        </p>
+           
+
+
+                    <!--
+                        This control returns to the first slide.
+                        It does not reload the page.
+                    -->
+
+                    <button
+                        class="primary-button restart-button"
+                        type="button"
+                        data-go-to="0"
+                    >
+                        <span aria-hidden="true">↺</span>
+                        फेर सूं देखो
+                    </button>
+
+
+                    <p class="final-small-text">
+                        एक नानो-सो तोहफो, ढेर सारो प्यार।
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =================================================
+             SLIDE PROGRESS NAVIGATION
+
+             The seven buttons represent the seven pages.
+
+             JavaScript must read data-go-to and navigate
+             to the requested slide index.
+        ================================================== -->
+
+        <nav
+            class="slide-progress"
+            id="slideProgress"
+            aria-label="Website pages"
+        >
+
+            <button
+                class="progress-dot is-current"
+                type="button"
+                data-go-to="0"
+                aria-label="पहलु पन्नो"
+                aria-current="step"
+            >
+                <span></span>
+            </button>
+
+
+            <button
+                class="progress-dot"
+                type="button"
+                data-go-to="1"
+                aria-label="आशीर्वाद पन्नो"
+            >
+                <span></span>
+            </button>
+
+
+            <button
+                class="progress-dot"
+                type="button"
+                data-go-to="2"
+                aria-label="यादां रा पन्ना"
+            >
+                <span></span>
+            </button>
+
+
+            <button
+                class="progress-dot"
+                type="button"
+                data-go-to="3"
+                aria-label="संगीत पन्नो"
+            >
+                <span></span>
+            </button>
+
+
+            <button
+                class="progress-dot"
+                type="button"
+                data-go-to="4"
+                aria-label="वीडियो पन्नो"
+            >
+                <span></span>
+            </button>
+
+
+            <button
+                class="progress-dot"
+                type="button"
+                data-go-to="5"
+                aria-label="दिल री बात"
+            >
+                <span></span>
+            </button>
+
+
+            <button
+                class="progress-dot"
+                type="button"
+                data-go-to="6"
+                aria-label="आखरी पन्नो"
+            >
+                <span></span>
+            </button>
+
+        </nav>
+
+
+
+        <!-- =================================================
+             BACKGROUND MUSIC CONTROL
+
+             No autoplay attribute is used because browsers
+             commonly block music until the visitor interacts.
+        ================================================== -->
+
+        <div class="music-control">
+
+            <audio
+                id="backgroundMusic"
+                autoplay
+                preload="auto"
+                loop
+            >
+
+                <source
+                    src="assets/audio/background-devotional.mp3"
+                    type="audio/mpeg"
+                >
+
+            </audio>
+
+
+            <button
+                class="music-toggle"
+                id="musicToggle"
+                type="button"
+                aria-label="बैकग्राउंड संगीत चालू करो"
+                aria-pressed="false"
+            >
+
+                <span
+                    class="music-toggle-icon"
+                    id="musicToggleIcon"
+                    aria-hidden="true"
+                >
+                    ♫
+                </span>
+
+                <span
+                    class="music-toggle-label"
+                    id="musicToggleLabel"
+                >
+                    Music Off
+                </span>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER
+
+             Fixed-position styling will be handled by CSS.
+        ================================================== -->
+
+        <footer class="site-footer">
+
+            <p>
+                प्यार सूं बनायो ❤️
+            </p>
+
+        </footer>
+
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+
+         File location:
+         birthday-website/script.js
+
+         defer ensures that HTML is parsed before JavaScript
+         starts looking for elements.
+    ====================================================== -->
+
+    <script src="script.js" defer></script>
+
+<script>
+(() => {
+    const music = document.getElementById("backgroundMusic");
+
+    if (!music) return;
+
+    // Keep the background music gentle.
+    music.volume = 0.35;
+
+    // Keep the existing Music button display synchronized.
+    const musicButton = document.getElementById("musicToggle");
+    const musicLabel = document.getElementById("musicToggleLabel");
+    const musicIcon = document.getElementById("musicToggleIcon");
+
+    function updateMusicButton(isPlaying) {
+        if (musicButton) {
+            musicButton.setAttribute("aria-pressed", String(isPlaying));
+
+            musicButton.setAttribute(
+                "aria-label",
+                isPlaying
+                    ? "बैकग्राउंड संगीत बंद करो"
+                    : "बैकग्राउंड संगीत चालू करो"
+            );
+        }
+
+        if (musicLabel) {
+            musicLabel.textContent = isPlaying ? "Music On" : "Music Off";
+        }
+
+        if (musicIcon) {
+            musicIcon.textContent = isPlaying ? "♫" : "♪";
+        }
+    }
+
+    music.addEventListener("play", () => updateMusicButton(true));
+    music.addEventListener("pause", () => updateMusicButton(false));
+
+    // Try playing as soon as the page opens.
+    function attemptAutoplay() {
+        music.play().catch(() => {
+            // Autoplay may be blocked by the browser.
+            // The first visitor interaction will retry playback.
+        });
+    }
+
+    // Start playback after the first tap or key press,
+    // except when the Music button itself is tapped.
+    function startAfterInteraction(event) {
+        if (
+            event.target instanceof Element &&
+            event.target.closest("#musicToggle")
+        ) {
+            return;
+        }
+
+        music.play()
+            .then(() => {
+                document.removeEventListener(
+                    "pointerdown",
+                    startAfterInteraction
+                );
+
+                document.removeEventListener(
+                    "keydown",
+                    startAfterInteraction
+                );
+            })
+            .catch(() => {
+                // Leave the existing Music button available.
+            });
+    }
+
+    attemptAutoplay();
+
+    document.addEventListener("pointerdown", startAfterInteraction);
+    document.addEventListener("keydown", startAfterInteraction);
+})();
+</script>
+
+</body>
+</html>
+
